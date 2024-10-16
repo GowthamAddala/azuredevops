@@ -1,0 +1,24 @@
+
+---
+
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+ name: rabbit-daemonset
+ labels:
+  type: message-app
+  author: gow
+spec:
+ selector:
+  matchLabels:
+   type: message-app
+ template:
+  metadata:
+   name: rabbit-pod
+   labels:
+    type: message-app
+  spec:
+   containers:
+    - name: rabbit-app
+      image: rabbitmq:3
+...
