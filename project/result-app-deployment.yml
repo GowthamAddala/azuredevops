@@ -5,7 +5,7 @@ metadata:
  name: result-app-deployment
  labels:
   author: gow
-  name: result-app-
+  name: result-app
 spec:
  replicas: 2
  selector:

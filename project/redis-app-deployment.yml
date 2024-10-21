@@ -1,7 +1,7 @@
 ---
 apiVersion: apps/v1
 kind: Deployment
-metadata
+metadata:
  name: redis-app-deployment
  labels:
   name: redis-app
@@ -16,9 +16,9 @@ spec:
    name: redis-app-pod
    labels:
     name: redis-app
-   spec:
-    containers:
-     - name: redis-app
-       image: redis
+  spec:
+   containers:
+    - name: redis-app
+      image: redis
 
 ...
