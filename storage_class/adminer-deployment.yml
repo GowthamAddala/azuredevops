@@ -1,0 +1,28 @@
+---
+
+apiversion: apps/v1
+kind: Deployment
+metadata:
+ name: adminer-deployment
+ labels:
+  author: gow
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: adminer
+ template:
+  metadata:
+   name: adminer-pod
+   labels:
+    app: adminer
+
+  spec:
+   containers:
+    - name: adminer
+      image: adminer
+      ports:
+       - containerPort: 8080
+         name: adminer
+
+...

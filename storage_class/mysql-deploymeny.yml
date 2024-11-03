@@ -1,6 +1,6 @@
 ---
 
-apiVersion: apps/1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
  name: mysql
@@ -23,8 +23,14 @@ spec:
       env:
        - name: 	MYSQL_ROOT_PASSWORD
          value: gow
+       - name: MYSQL_DATABASE
+         value: mydatabase
+       - name: MYSQL_USER
+         value: user
+       - name: MYSQL_PASSWORD
+         value: userpassword
       ports:
-       - containerport: 3306
+       - containerPort: 3306
          name: mysql
       volumeMounts:
        - name: mysql-persitance-storage
